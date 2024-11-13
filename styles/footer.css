@@ -43,7 +43,12 @@ form[id="contact-us-form"] {
     gap: 2%;
     margin-bottom: 7%;
 }
-
+section[class="logo-bookmark"] {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 2%;
+}
 @container body (inline-size < 1000px) {
 
     footer {
