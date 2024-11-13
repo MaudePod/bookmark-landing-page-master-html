@@ -1,0 +1,97 @@
+section[class="faq"] {
+    display: grid;
+    width: 50%;
+    margin: auto;
+}
+
+
+section[class="faq-more-info"] button {
+    background: var(--soft-blue);
+    width: 80%;
+    padding: 10%;
+    border-radius: 2px;
+    border-color: transparent;
+    min-width: fit-content;
+
+}
+
+section[class="faq-more-info"] button {
+    width: 80px;
+    height: 30px;
+}
+
+
+section[class="faq-card"] h2 {
+    text-align: center;
+}
+
+section[class="faq-card"] p {
+    text-align: center;
+}
+
+section[id="answer-1"],
+section[id="answer-2"],
+section[id="answer-3"],
+section[id="answer-4"] {
+    color: var(--grayish-blue);
+}
+
+section[class="faq-more-info"] {
+    margin: auto;
+    text-wrap: nowrap;
+}
+
+summary {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    cursor: pointer;
+    justify-content: space-around;
+}
+
+ section[class="question"]:hover img,
+details[open] img {
+    transform: rotateX(180deg);
+    cursor: pointer;
+}
+
+details:last-of-type,
+details[open]:last-of-type {
+    margin-bottom: 5%;
+}
+details:hover section[class="arrow"] {
+    transform: translateY(-200vh);
+}
+
+section[class="question"]:hover section[class="arrow"],
+details[open] section[class="arrow"] {
+    transform: rotateX(180deg);
+    filter: hue-rotate(120deg);
+}
+
+section[class="question"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    transition: all ease-in-out 10ms;
+}
+
+section[class="question"] img {
+    width: 10px;
+    height: 10px;
+}
+
+
+
+@container body (inline-size < 1000px) {
+
+    section[class="faq"] {
+        width: 80%;
+    }
+
+    section[class="faq-more-info"] {
+        width: 40%;
+    }
+
+}

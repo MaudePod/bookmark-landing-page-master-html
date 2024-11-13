@@ -1,0 +1,121 @@
+footer {
+    display: grid;
+    place-items: center;
+    background: var(--soft-blue);
+    color: white;
+}
+
+section[class="sub-footer"] {
+    margin-top: 2%;
+}
+
+section[class="footer-text"] {
+    text-align: center;
+}
+
+input[type="email"] {
+    border: 0;
+    outline: transparent;
+}
+
+section[class="social-media"] {
+    display: flex;
+    gap: 5%;
+    width: 200px;
+    place-content: end;
+}
+
+section[class="social-media"]:hover {
+    cursor: pointer;
+}
+
+section[class="arrow"] {
+    background-image: url('./images/icon-arrow.svg');
+    height: 25px;
+    width: 25px;
+    background-repeat: no-repeat;
+}
+
+form[id="contact-us-form"] {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2%;
+    margin-bottom: 7%;
+}
+
+@container body (inline-size < 1000px) {
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+    }
+
+    section[class="sub-footer"] {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        width: 80%;
+        margin-top: 2%;
+    }
+
+    section[class="footer-text"] {
+        width: 80%;
+    }
+
+    form[id="contact-us-form"] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    menu[type="footer"] {
+        flex-direction: column;
+    }
+
+    input[type="email"] {
+        appearance: none;
+        background-color: white;
+        color: black;
+        padding: 4%;
+        text-align: center;
+    }
+
+    input[type="email"]:invalid {
+        padding: 4%;
+    }
+
+    input[id="contact-us-button"] {
+        background: var(--soft-red);
+        padding: 4%;
+        border-radius: 2%;
+        color: white;
+        border: 0;
+        text-align: center;
+    }
+
+    body:has(input[type="email"]:invalid) label[for="email"]::before {
+        display: flex;
+        content: " Whoops, make sure it's an email";
+        background-color: var(--soft-red);
+        padding: 2%;
+
+    }
+
+    section[class="logo-bookmark"] {
+        margin-top: 5%;
+    }
+
+    section[class="logo-bookmark"] svg path {
+        fill: white;
+    }
+
+    section[class="social-media"] {
+        place-content: center;
+        margin-top: 5px;
+    }
+
+    form[id="contact-us-form"] {
+        gap: 5%;
+    }
+}

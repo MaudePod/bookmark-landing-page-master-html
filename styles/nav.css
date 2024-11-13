@@ -1,0 +1,150 @@
+
+nav {
+    width: var(--content-width);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    padding: 0;
+}
+
+menu li {
+    list-style: none;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 2px;
+    min-width: fit-content;
+    text-wrap: nowrap;
+
+}
+
+menu li:hover {
+    cursor: pointer;
+}
+input[id="close"],
+input[id="menu-checkbox"] {
+    display: none;
+}
+menu[type="main"] {
+    width: 100%;
+    flex-basis: 30%;
+    text-transform: uppercase;
+}
+li[class="login"] {
+    background: var(--soft-red);
+    color: white;
+    box-shadow: var(--button-box-shadow);
+}
+menu[class="mobile-menu"] {
+    display: none;
+}
+
+@container body (inline-size  < 1000px) {
+    :root {
+        --img-width: 100%;
+    }
+    menu[class="mobile-menu"] {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    section[class="menu-controls"] {
+        display: grid;
+        width: 80%;
+        grid-template-columns: 1fr auto;
+        position: absolute;
+        top: 10px;
+    }
+  
+    li[id="space"] {
+        flex: .5;
+        border-bottom: 0;
+    }
+
+    label[for="hamburger"] {
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+        background-color: white;
+    }
+    label[for="close"] {
+        display: none;
+        appearance: none;
+        background-repeat: no-repeat;
+        width: 25px;
+        height: 25px;
+    }
+    nav[ class="desktop-nav"] {
+        display: none;
+    }
+    body:has(input[id="hamburger"]:checked) menu[type="mobile-menu"] {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--very-dark-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        opacity: 0.9;
+        margin: 0;
+        position: fixed;
+        z-index: 3;
+    }
+
+
+    body:has(input[id="hamburger"]:checked) label[for="close"] {
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+    }
+
+    body:has(input[id="close"]:checked) menu[type="mobile-menu"] li,
+    label[for="hamburger"] {
+        display: none;
+    }
+
+    body:has(input[id="close"]:checked) label[for="hamburger"] {
+        display: flex;
+        cursor: pointer;
+    }
+    menu[type="mobile-menu"] li:last-of-type {
+        border-bottom: 0;
+    }
+
+    menu[type="mobile-menu"] li:first-of-type {
+        border-bottom: 2px solid var(--grayish-blue);
+        border-top: 2px solid var(--grayish-blue);
+    }
+
+    menu[type="mobile-menu"] li {
+        color: white;
+        border-bottom: 2px solid var(--grayish-blue);
+        width: 80%;
+        text-align: center;
+        height: 50px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+    }
+
+    menu[type="mobile-menu"] li:active,
+    li:hover {
+        border: 2px solid var(--grayish-blue);
+    }
+    input[id="hamburger"] {
+        display: none;
+    }
+
+}

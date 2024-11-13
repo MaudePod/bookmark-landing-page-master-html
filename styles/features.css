@@ -1,0 +1,190 @@
+section[class="features-container"]:has(input[id="one"]:checked) section[id="tab-1"],
+section[class="features-container"]:has(input[id="two"]:checked) section[id="tab-2"],
+section[class="features-container"]:has(input[id="three"]:checked) section[id="tab-3"] {
+    width: var(--content-width);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    height: 35vh;
+    border-bottom-color: var(--soft-red);
+}
+
+section[class="features-container"] {
+    display: grid;
+    position: relative;
+}
+
+menu[type="features"] {
+    place-content: center;
+    gap: 5%;
+    width: 40%;
+}
+
+section[class="features-space"] {
+    border-bottom: 1px solid var(--grayish-blue);
+    width: 33dvw;
+
+}
+
+menu[type="features"] label {
+    border-bottom: 3px solid transparent;
+    margin-bottom: -17px;
+}
+
+menu[type="features"] label:hover {
+    border-bottom-color: var(--soft-red);
+}
+
+section[class="features"] {
+    width: var(--content-width);
+    margin: auto;
+    display: grid;
+    place-items: center;
+}
+
+section[class="features"] p {
+    text-align: center;
+    width: 30%;
+    color: var(--grayish-blue);
+}
+
+section[class="features"] input[type="radio"] {
+    appearance: none;
+    display: none;
+}
+
+section[class="features"] input[type="radio"]+label {
+    color: var(--grayish-blue);
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+section[class="features"] input[type="radio"]:checked+label {
+    border-bottom: 3px solid var(--soft-red);
+    margin-bottom: -17px;
+    padding-bottom: 2%;
+    width: 80%;
+    text-align: center;
+}
+
+section[class="features-tab-text"] {
+    width: 80%;
+    display: grid;
+    place-content: center;
+}
+
+section[class="features-tab-text"] p {
+    color: var(--grayish-blue);
+}
+
+menu[type="more-info"] li {
+    box-shadow: var(--button-box-shadow);
+}
+
+section[class="features-tab"] {
+    display: none;
+}
+
+section[class="features-tab-img"] {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+section[class="features-tab-img"] svg {
+    width: 100%;
+    height: 100%;
+}
+
+section[class="features-tab"] img {
+    width: var(--img-width);
+    height: 80%;
+    z-index: 1;
+}
+
+section[class="right-blue-background"] {
+	height: 20cqh;
+	width: 84cqw;
+	bottom: 0cqh;
+	background: blue;
+	border-radius: 130px;
+	position: absolute;
+	z-index: 0;
+	left: -40cqw;
+}
+@container body (inline-size < 1000px) {
+    section[class="features"] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    menu[type="features"] {
+        flex-direction: column;
+        gap: 2vh;
+        text-align: center;
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    menu[type="features"] label{
+        padding: 5%;
+        border-bottom: 2px solid var(--grayish-blue);
+        width: 100%;
+        position: relative;
+    }
+    section[class="features"] input[type="radio"]:checked+label {
+        width: 100%;
+        border-bottom: 2px solid var(--grayish-blue);
+    }
+    section[class="features"] input[type="radio"]:checked+label::after {
+        display: grid;
+        border-bottom: 3px solid var(--soft-red);
+        width:50%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left:0;
+        right: 0;   
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    section[class="features"] label:nth-of-type(1){
+        border-top: 2px solid var(--grayish-blue);
+    }
+    section[class="features"] p {
+        text-align: center;
+        width:100%;
+        margin: auto;
+    }
+
+    section[class="features-container"]:has(input[id="one"]:checked) section[id="tab-1"],
+    section[class="features-container"]:has(input[id="two"]:checked) section[id="tab-2"],
+    section[class="features-container"]:has(input[id="three"]:checked) section[id="tab-3"] {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    section[class="features-tab-img"] {
+        width: 100%;
+        position: relative;
+    }
+
+    img {
+        height: fit-content;
+    }
+
+    menu[type="more-info"] {
+        display: none;
+    }
+
+    section[class="features-tab-text"] {
+        margin: auto;
+        width:100%;
+        text-align: center;
+    }
+}
