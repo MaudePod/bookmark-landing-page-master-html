@@ -9,8 +9,6 @@ section[class="simple-bookmark-manager"] {
 section[class="simple-bookmark-manager"] img {
     width: var(--img-width);
     margin: auto;
-    box-shadow: 15%;
-
 }
 
 section[class="simple-bookmark-manager-image"] {

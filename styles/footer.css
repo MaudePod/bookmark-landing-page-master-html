@@ -16,38 +16,99 @@ section[class="footer-text"] {
 input[type="email"] {
     border: 0;
     outline: transparent;
+    border-radius: 5px;
+    padding: 2% 8% 2% 8%;
+    height: 30px;
 }
 
+input[id="contact-us-button"] {
+    background: var(--soft-red);
+    padding: 2% 4% 2% 4%;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+    outline: transparent;
+    text-align: center;
+}
+input[id="contact-us-button"]:hover {
+    background: white;
+    color: var(--soft-red);
+    outline: 1px solid var(--soft-red);
+    cursor: pointer;
+}
 section[class="social-media"] {
     display: flex;
     gap: 5%;
     width: 200px;
     place-content: end;
 }
-
+section[class="social-media"] img:hover {
+	filter: invert(0.5) sepia(1) saturate(05) hue-rotate(320deg) contrast(10);
+}
 section[class="social-media"]:hover {
     cursor: pointer;
 }
 
-section[class="arrow"] {
-    background-image: url('./images/icon-arrow.svg');
-    height: 25px;
-    width: 25px;
-    background-repeat: no-repeat;
-}
 
 form[id="contact-us-form"] {
     display: flex;
     width: 100%;
-    justify-content: center;
     gap: 2%;
     margin-bottom: 7%;
+}
+
+form[id="contact-us-form"] {
+    display: grid;
+    grid-template-areas: "email concat-us"
+                         "email-label ...";
+    width: 100%;
+    gap: 2%;
+    margin-bottom: 7%;
+}
+label[for="email"] {
+    position: relative;
+    grid-area: email-label;
 }
 section[class="logo-bookmark"] {
     display: flex;
     place-content: center;
     place-items: center;
     gap: 2%;
+}
+body:has(input[type="email"]:invalid) label[for="email"]::before {
+    display: flex;
+    content: "\00a0 Whoops, make sure it's an email";
+    background-color: var(--soft-red);
+    padding: 2%;
+    margin-top: -2%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+body:has(input[type="email"]:invalid) {
+
+    label[for="email"]::after {
+        display: flex;
+        content: "!";
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--soft-red);
+        padding: 2%;
+        position: absolute;
+        top: -175%;
+        right: 10px;
+        place-content: center;
+        font-weight: 700;
+    }
+
+    input[type="email"] {
+        border: 3px var(--soft-red) solid;
+    }
+}
+menu[type="footer"] li:hover {
+    color: var(--soft-red);
 }
 @container body (inline-size < 1000px) {
 
@@ -77,38 +138,56 @@ section[class="logo-bookmark"] {
     menu[type="footer"] {
         flex-direction: column;
     }
-
+    
     input[type="email"] {
         appearance: none;
         background-color: white;
         color: black;
         padding: 4%;
         text-align: center;
-    }
-
-    input[type="email"]:invalid {
-        padding: 4%;
+        grid-area: email;
     }
 
     input[id="contact-us-button"] {
-        background: var(--soft-red);
         padding: 4%;
-        border-radius: 2%;
-        color: white;
-        border: 0;
-        text-align: center;
+        border-radius: 5px;
+        grid-area: contact-us;
     }
 
     body:has(input[type="email"]:invalid) label[for="email"]::before {
         display: flex;
-        content: " Whoops, make sure it's an email";
+        content: "\00a0 Whoops, make sure it's an email";
         background-color: var(--soft-red);
         padding: 2%;
+        margin-top: -3%;
+    }
 
+    body:has(input[type="email"]:invalid) {
+
+        label[for="email"]::after {
+            display: flex;
+            content: "!";
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--soft-red);
+            padding: 2%;
+            position: absolute;
+            top: -205%;
+            right: 10px;
+            place-content: center;
+            font-weight: 700;
+        }
+
+        input[type="email"] {
+            border: 3px var(--soft-red) solid;
+        }
     }
 
     section[class="logo-bookmark"] {
         margin-top: 5%;
+        flex-direction: column;
     }
 
     section[class="logo-bookmark"] svg path {
@@ -122,5 +201,17 @@ section[class="logo-bookmark"] {
 
     form[id="contact-us-form"] {
         gap: 5%;
+    }
+
+    footer nav {
+        flex-direction: column;
+    }
+}
+
+@container body (800px <=inline-size < 1000px) {
+    body:has(input[type="email"]:invalid) {
+        label[for="email"]::after {
+            top: -280%;
+        }
     }
 }

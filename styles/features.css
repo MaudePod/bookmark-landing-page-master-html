@@ -21,8 +21,8 @@ menu[type="features"] {
 }
 
 section[class="features-space"] {
-    border-bottom: 1px solid var(--grayish-blue);
-    width: 33dvw;
+    border-bottom: 3px solid var(--grayish-blue);
+    width: 32dvw;
 
 }
 
@@ -61,10 +61,11 @@ section[class="features"] input[type="radio"]+label {
 
 section[class="features"] input[type="radio"]:checked+label {
     border-bottom: 3px solid var(--soft-red);
-    margin-bottom: -17px;
+    margin-bottom: -19px;
     padding-bottom: 2%;
     width: 80%;
     text-align: center;
+    z-index: 1;
 }
 
 section[class="features-tab-text"] {
@@ -105,19 +106,27 @@ section[class="features-tab"] img {
 }
 
 section[class="right-blue-background"] {
-	height: 20cqh;
-	width: 84cqw;
-	bottom: 0cqh;
-	background: blue;
-	border-radius: 130px;
-	position: absolute;
-	z-index: 0;
-	left: -40cqw;
+    height: 20cqh;
+    width: 84cqw;
+    bottom: 0cqh;
+    background: blue;
+    border-radius: 130px;
+    position: absolute;
+    z-index: 0;
+    left: -40cqw;
 }
+
+li[class="blue-link"] {
+    background: var(--soft-blue);
+    color: white;
+    width: fit-content;
+}
+
 @container body (inline-size < 1000px) {
     section[class="features"] {
         display: flex;
         flex-direction: column;
+        padding-bottom: 10%;
     }
 
     menu[type="features"] {
@@ -128,36 +137,43 @@ section[class="right-blue-background"] {
         margin-top: 10%;
     }
 
-    menu[type="features"] label{
+    menu[type="features"] label {
         padding: 5%;
         border-bottom: 2px solid var(--grayish-blue);
         width: 100%;
         position: relative;
     }
+
     section[class="features"] input[type="radio"]:checked+label {
         width: 100%;
         border-bottom: 2px solid var(--grayish-blue);
     }
+
     section[class="features"] input[type="radio"]:checked+label::after {
         display: grid;
         border-bottom: 3px solid var(--soft-red);
-        width:50%;
+        width: 50%;
         height: 100%;
         content: "";
         position: absolute;
         bottom: -2px;
-        left:0;
-        right: 0;   
+        left: 0;
+        right: 0;
         margin-right: auto;
         margin-left: auto;
     }
 
-    section[class="features"] label:nth-of-type(1){
+    section[class="features-space"] {
+        display: none;
+    }
+
+    section[class="features"] label:nth-of-type(1) {
         border-top: 2px solid var(--grayish-blue);
     }
+
     section[class="features"] p {
         text-align: center;
-        width:100%;
+        width: 100%;
         margin: auto;
     }
 
@@ -184,7 +200,7 @@ section[class="right-blue-background"] {
 
     section[class="features-tab-text"] {
         margin: auto;
-        width:100%;
+        width: 100%;
         text-align: center;
     }
 }

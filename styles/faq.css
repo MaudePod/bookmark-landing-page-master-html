@@ -49,7 +49,7 @@ summary {
     justify-content: space-around;
 }
 
- section[class="question"]:hover img,
+section[class="question"]:hover img,
 details[open] img {
     transform: rotateX(180deg);
     cursor: pointer;
@@ -59,6 +59,7 @@ details:last-of-type,
 details[open]:last-of-type {
     margin-bottom: 5%;
 }
+
 details:hover section[class="arrow"] {
     transform: translateY(-200vh);
 }
@@ -80,6 +81,13 @@ section[class="question"] {
 section[class="question"] img {
     width: 10px;
     height: 10px;
+}
+
+section[class="arrow"] {
+    background-image: url(../images/icon-arrow.svg);
+    height: 25px;
+    width: 25px;
+    background-repeat: no-repeat;
 }
 
 
